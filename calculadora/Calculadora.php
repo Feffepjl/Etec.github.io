@@ -23,7 +23,11 @@ class Calculadora
                 $resultado = $this->valor1 * $this->valor2;
                 break;
             case '/':
-                $resultado = $this->valor1 / $this->valor2;
+                if ($valor2 == 0) {
+                    $resultado = "ERRO";
+                } else {
+                    $resultado = $this->valor1 / $this->valor2;
+                }
                 break;
         }
         return $resultado;

@@ -32,7 +32,7 @@
     }
 ?>
     <label>Resultado:</label>
-    <input type="text" value="<?php echo $resultado ?>" readonly>
+    <h3><?= $resultado ?></h3>
 </form>
 </body>
 </html>
