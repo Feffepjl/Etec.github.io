@@ -42,7 +42,7 @@ $precoVinho = $vinho->getPreco();
     <h1>Informações do Vinho</h1>
     <?php
     echo $vinho->mostrarVinho()."\n";
-    echo $vinho->verificarPreco($precoVinho)."\n";
+    echo $vinho->verificarPreco($precoVinho) ? "Produto em oferta" : "Produto com preço normal";
     ?>
 </div>
 

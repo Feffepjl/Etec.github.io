@@ -76,9 +76,9 @@ class Vinho
     }
     public function verificarPreco($preco){
         if ($this->preco < 25){
-            return "true\n";
+            return true;
         }  else {
-            return "false\n";
+            return false;
         }
     }
 
