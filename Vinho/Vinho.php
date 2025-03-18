@@ -75,11 +75,7 @@ class Vinho
         echo "Nome: " . $this->nome .  ", Tipo: " . $this->tipo .  ", Preco: " . $this->preco .  ", Safra: " . $this->safra . "\n";
     }
     public function verificarPreco($preco){
-        if ($this->preco < 25){
-            return true;
-        }  else {
-            return false;
-        }
+       return $preco < 25;
     }
 
 }

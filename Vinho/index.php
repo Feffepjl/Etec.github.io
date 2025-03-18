@@ -1,13 +1,7 @@
 <?php
 require_once 'Vinho.php';
 $vinho = new Vinho();
-$vinho->setNome("Cabernet Sauvignon");
-$vinho->setTipo("Tinto");
-$vinho->setPreco(30);
-$vinho->setSafra(2018);
-$precoVinho = $vinho->getPreco();
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -37,14 +31,35 @@ $precoVinho = $vinho->getPreco();
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Informações do Vinho</h1>
+    <form action="" method="post">
+        <div class="container">
+            <label>
+                <input type="text" name="Nome" placeholder="Nome do vinho:">
+                <input type="text" name="Tipo" placeholder="Tipo do vinho:">
+                <input type="text" name="Preco" placeholder="Preço do vinho:">
+                <input type="text" name="Safra" placeholder="Safra do vinho:">
+                <input type="submit" name="btnVerificar">
+            </label>
+        </div>
+    </form>
     <?php
-    echo $vinho->mostrarVinho()."\n";
-    echo $vinho->verificarPreco($precoVinho) ? "Produto em oferta" : "Produto com preço normal";
+    if(isset($_POST['btnVerificar'])) {
+        $vinho->setNome($_POST['Nome']);
+        $vinho->setTipo($_POST['Tipo']);
+        $vinho->setPreco($_POST['Preco']);
+        $vinho->setSafra($_POST['Safra']);
+        $precoVinho = $vinho->getPreco();
+    }
     ?>
-</div>
+    <div class="container">
+        <h1>Informações do Vinho</h1>
+        <?php
+        if(isset($_POST['btnVerificar'])) {
+            echo $vinho->mostrarVinho() . "\n";
+            echo $vinho->verificarPreco($precoVinho) ? "Produto em oferta" : "Produto com preço normal";
+        }
+        ?>
+    </div>
 
 </body>
 </html>
