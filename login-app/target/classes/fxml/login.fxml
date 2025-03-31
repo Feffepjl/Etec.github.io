@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.view.LoginController"
+      style="-fx-background-color: #f5f5f5;">
+    
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <!-- Header -->
+    <VBox spacing="10" alignment="CENTER">
+        <Text text="Welcome Back" 
+              style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #2196F3;"/>
+        <Text text="Please sign in to continue" 
+              style="-fx-font-size: 14px; -fx-fill: #666;"/>
+    </VBox>
+
+    <!-- Login Form -->
+    <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10;">
+        <VBox spacing="5">
+            <Label text="Email" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="emailField" 
+                      promptText="Enter your email"
+                      style="-fx-background-radius: 5; -fx-border-radius: 5;"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Password" style="-fx-font-weight: bold;"/>
+            <PasswordField fx:id="passwordField" 
+                         promptText="Enter your password"
+                         style="-fx-background-radius: 5; -fx-border-radius: 5;"/>
+        </VBox>
+
+        <VBox spacing="10" style="-fx-padding: 20 0;">
+            <Button text="Sign In" 
+                    onAction="#handleLogin"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 5;"/>
+            <Button text="Create Account" 
+                    onAction="#handleRegister"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5;"/>
+        </VBox>
+    </VBox>
+
+    <!-- Footer -->
+    <Text text="© 2024 User Management System" 
+          style="-fx-font-size: 12px; -fx-fill: #999;"/>
+</VBox> 
