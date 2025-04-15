@@ -1,0 +1,7 @@
+{
+  "require": {
+    "mpdf/mpdf": "v8.2.1",
+    "ext-mysqli": "*",
+    "ext-pdo": "*"
+  }
+}
